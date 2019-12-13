@@ -120,5 +120,4 @@ exception
         return false;
         
 end authenticate_user;
-/
 ```
