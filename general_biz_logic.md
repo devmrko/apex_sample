@@ -1,6 +1,7 @@
-# Business logic by SQL, when you develop an application by APEX
+# Business logic by SQL
+when you develop an application by APEX
 
-### how to add sequence as key
+### # how to add sequence as key
   * create sequence
 ```
 create sequence "sequence name"
