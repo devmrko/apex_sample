@@ -32,6 +32,8 @@ end;
 ```
   * enable above trigger
 ```
+ALTER TRIGGER  "trigger name" ENABLE
+```
   * create trigger for hashing updated password
 ```
 CREATE OR REPLACE EDITIONABLE TRIGGER  "trigger name" 
@@ -40,9 +42,7 @@ CREATE OR REPLACE EDITIONABLE TRIGGER  "trigger name"
 begin 
   -- Hash the password so we are not saving clear text
   :new.password := hash_password(upper(:old.username), :new.password); 
-end; 
-```
-ALTER TRIGGER  "trigger name" ENABLE
+end;
 ```
   * insert user(when user data is inserted, above trigger will hash the password, and add new sequence as the pk)
 ```
