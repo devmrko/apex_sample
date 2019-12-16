@@ -30,6 +30,10 @@ begin
   :new.password := hash_password(upper(:new.user_name), :new.password); 
 end; 
 ```
+  * enable above trigger
+```
+ALTER TRIGGER  "trigger name" ENABLE
+```
   * insert user(when user data is inserted, above trigger will hash the password, and add new sequence as the pk)
 ```
 Insert into USERS (USER_NAME,PASSWORD) values ('user name', 'password')
