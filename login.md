@@ -2,6 +2,10 @@
 when you develop an application by APEX
 
 ### # how to authenticate user
+  * create sequence for user table
+```
+create sequence "sequence name of user table"
+```
   * create user table
 ```
 CREATE TABLE  "USERS" 
@@ -25,4 +29,8 @@ begin
   -- Hash the password so we are not saving clear text
   :new.password := hash_password(upper(:new.user_name), :new.password); 
 end; 
+```
+  * insert user(when user data is inserted, above trigger will hash the password, and add new sequence as the pk 
+```
+Insert into USERS (USER_NAME,PASSWORD) values ('user name', 'password')
 ```
